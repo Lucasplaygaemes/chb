@@ -1,0 +1,651 @@
+The Linux Programming Interface, Effective C. Man
+
+Effective C é um livro estupendo, onde mostra boas práticas e códigos com segurança e previsibilidade.
+
+TLPI, um livro maravilhoso sobre o linux, isto é um livro de anotações meu sobre esse livro, citando as páginas nas quais eu cito coisas, não fazer um artigo, mas caso eu precise relembrar algo ou ajudar para ensinar alguém.
+Esse livro descreve com detalhes dezenas de coisas do Linux e C, sendo assim, ótimo para aprender C com grande profundidade.
+
+PS: O Livro cita também em detalhes dezenas de outras coisas além do linux e C, como o GNU, o UNIX e etc, a não ser que seja necessário citar por culpa do contexto.
+Também haverá exemplos muito constantemente, o livro terá diversos exercícios também, que são opcionais.
+
+Dúvidas é possível entrar em contanto através de lucasplaygaemes@gmail.com
+
+########             ATENCÃO             ########
+
+Haverá contéudo em C escrito de forma NÃO liner, devido a facilidade, caso eu esteja estudando ou vendo algo em C, adiantarei a sua escritura e depois edito ou corrijo caso necessário.
+
+
+                                                        #########             SISTEMAS                 #########
+
+O "bisavô" do Linux e de quase todo OS, é o UNIX, foi desenvolvido em 1969, quando o Linus Torvald nasceu, pelo Ken Thompson nos laboratórios Bell, dá AT&T.
+Em 1970 o UNIX foi reescrito em assembly, pouco tempo depois, Dennis Ritchie, um dos colegas do Thompson, fez o design e a implementação da linguagem C.
+
+The GNU project
+Em 1984, um programador brabo chamado Richard Stallman, quem trabalhava no MIT, marcou de criar uma implementação "gratuita" do UNIX. E visão do Stallman era uma moral, e "gratuito" era definido de uma forma legal, ao invés de uma forma financeira, no site deles eles definem como:
+"Software livre significa que os usuários do software têm liberdade. (A questão não é sobre o preço.) Nós desenvolvemos o sistema operacional GNU de modo que os usuários possam ter liberdade no uso do computador."
+
+GNU é um acrônimo recursivo para "GNU's is not UNIX", o Stall quis fazer um sistema como o UNIX e que fosse gratuito e do zero, consistindo de kernel e todos os outros programas essências para o sistema, e aconselhou que outros seguissem ele nisso
+
+Umas das grandes consequências da GNU, é o GPL, ou General Public License, a mesma é a personificação da noção de gratuito.
+E isso foi extremamente importante! A maior parte dos softwares que tem no Linux e inclusive, o kernel, estão sobre a licença GPL, a licença tem vários regras, mas entre, alguns exemplos, Não transcritos, que eu lembro. são:
+    • Todo Software distribuído sobre a licença GPL deve ser código aberto e ter a livre e gratuita permissão para modificação.
+    • Todo software que for um derivado ou fork de algum que é da licença GPL, deve também ser da licença GPL.
+    • Se o software for distribuído de forma executável, os usuários devem ter a possibilidade de obter e modificar o código fonte.
+Dentre outros.
+Na época, o equipe da GNU havia feito quase tudo para distribuir um OS completo, exceto o kernel, agora que o Linus faz a sua mágica.
+
+
+
+#####                     Linux                 #####
+Em 1991, o estudante Finlandês da universidade de Helsinki, foi inspirado a desenvolver seu próprio sistema operacional para o seu Intel 80386 PC. Ao longos do seus estudos, ele iniciou um projeto para criar um completo, eficiente e completo kernel UNIX para rodar no 386, que aliás, havia suporte até 2012, 21 anos mais ou menos de suporte.
+O torvald desenvolveu um kernel básico, capaz de rodar e compilar vários programas GNU, e na época pediu ajuda para o desenvolver.
+Inicialmente ele estava sobre uma outra licença mais restritiva, mas posteriormente ele migrou para a a GNU GPL.
+E ele consegui ajuda, e um tempo depois, em março de 1994, a versão 1.0 do Linux foi lançada!
+Daí para frente é história.
+
+
+
+
+
+#####                     BSD's                  #####
+BSD é um sistema operacional baseado em UNIX que já estava disponível para a arquitetura x86-32, ou 32 bits nos início dos anos 90.
+Existe muita história por trás da evolução ramificação e criações do BSD, deixo a pequisa caso haja curiosidade de aprender mais..
+O BSD tem um arquitetura similar a do Linux, havendo diferenças e nuances mas sendo ainda ótimo, ele é escrito completamente em C e partes em C++ e assembly. Mesmo que a visão de gratuito e de software livre seja distinta entre a licença do GNU GPL e do licença BSD, a GNU tem diversos códigos e programas que são de suma importância tanto para o Linux quanto para o FreeBSD, uma das principais diferenças entre a GPL e a BSD, é que a do BSD, você faz literalmente oque quiser com o software derivado, baseado, ou com pedaços do original, e o derivado em qualquer licença, mas ainda é obrigatório que seja citado que a o BSD ou o original fora usado e sua licença.
+O BSD deu origem a diversos outros sistemas, tais como:
+macOS
+iOS
+iPadOS
+watchOS
+tvOS
+TrueNAS 
+E do Playstation Vita, e do 3 ao 5.
+
+
+
+##########                     Distribuições Linux                   #########
+Distribuições Linux se refere a Sistemas Operacionais que contém o Kernel do Linux, originalmente Linux era o nome apenas do kernel, mas com a popularização, é rotineiro que se refiram ao Linux, como todo o sistema operacional, tanto do kernel a bibliotecas, ferramentas e ajustes que vão de Distro para distro.
+As distribuições mais novas apareceram em 1992, e incluíam o MCC Interim Linux (Do Centro de Computação de Manchester, Reino Unido), o TAMU (Texas A&M Universidade), e o SLS (SoftLanding Linux System). Os mais antigos sobreviventes até hoje são do slackware, que apareceu em 1993, e o Debian apareceu aproximadamente na mesma época, logo o SUSE e a Red Hat seguiram e entraram no jogo.
+
+
+##                          Padronização                     ##
+No fim dos anos 80, uma variedade de implementações do UNIX estavam disponíveis, ótimo, mas com um problema, algumas eram baseadas no BSD, outras no System V, e alguns para os 2, sendo assim, cada fabricante/ programador, adicionava oque queria na sua implementação, fazendo ser muito difícil portar programas, oque pressionou a padronização do C.
+
+######                  The C Programming Language             #######
+
+No início dos anos 80, C já teria 10 anos de existência, e foi implementado em uma variedade de dispositivos UNIX e outros sistemas operacionais, com pequenas diferenças entre eles, parte disso porque a linguagem não era padronizada como deveria funcionar.
+Esse fatores incentivaram na criação de uma padronização do C, que culminaram em 1989 com a aprovação do ANSI, ou, American National Standars Institute, ou Agência Nacional Americana de Normas/Regras/Padrões.
+Que logo foi adotado pela ISO, além de definir a sintaxe e semântica do C e diversas coisas, essa versão é conhecida como C89, ou menos comumente ISOC90, é e completamente descrito no Livro do Ritchie's the C Programming language.
+Uma revisão foi adotado pela ISO do padrão em C em 1990, esse padrão é normalmente referido como C99, que contam com diversas modificações na linguagem, essas modificações incluíam a adição do tipo "long long", e de dados Booleanos, comentários com //.
+Pointer's ou ponteiros foram restringidos, e arrays de tamanho variável.
+Uma coisa ótima sobre o C, é que suas características não são fixas devido ao sistema operacional, ou não apenas fixas no UNIX, qualquer programa em C usando apenas a bibliotecas padrões do C devem ser portáveis através de qualquer distribuição que o suporte.
+Isso é uma pura verdade, entretanto, é de suma importância que se note no "Usando apenas as bibliotecas padrões do C", pois, ao avançar na linguagem, e que bibliotecas mais complexas ou funções sejam necessárias, o Windows tem ramificações e diferenciações do C genérico e o do Windows, tal qual o Windows tem código que só podem ser compilados com o compilador próprio do windows, caso contrário não compilaria.
+
+
+## Padrões POSIX ##
+
+O termo POSIX, uma abreviação de Portable Operating System Interface, que se refere a um grupo de padrões desenvolvidos ao padrão desenvolvido pelo auspício (ajuda de uma instituição ou empresa, monetária ou educacional) do EEE.
+O POSIX mais interessante para o nosso proposito é a do POSIX.1 (POSIX 1003.1) e o subsequente, POSIX.2
+
+# POSIX.1 e POSIX.2 #
+
+OPCIONAL E PARA SER ADICIONADO NO FUTURO
+
+
+#### Linux, Padrões, e os Padrões Base do Linux ####
+Como objetivo geral do Linux, como exemplo o Kernel, Glibc, e as ferramentas, buscam se adequadas as diversas distribuições do Linux, entretanto, até o momento, distribuições linux são categorizadas como "UNIX"
+
+
+
+
+##################             Conceitos Fundamentais         ##################
+
+"Conceitos Fundamentais" abrange uma variedade de conceitos relacionados ao Linux, programação de sistemas, C e etc...
+
+Este cápitulo tem o objetivo de servir de base para programadores ou usuários que apenas utilizaram outros sistemas operacionais, ou tem se não nenhum pouca familiridade com o Linux e com o UNIX.
+
+####### O Núcleo do Sistema: O Kernel  ######
+
+O Termo Sistema Operacional é normalmente usado com dois significados diferentes:
+
+• Para demarcar o "pacote" que engloba tudo, ou seja, que consiste da centrel de controle, os recursos do sistema e diversas ferramentas como editores de texto, interfaces Gráficas¹ Ou CLI/TUI² utilidades com arquivos, como exploradores empacotadores etc...
+• Mais especificamente, para a central de software que maneja os recursos alocados, como RAM, CPU e dispositivos.
+
+¹ Interface Gráfica se refere a parte visual, em que é possível a interação em um sistema, ou seja, Aquilo que você vê, as janelas dos aplicativos, o lugar onde você digita textos, clica com o mouse e etc...
+² CLI representa "Command Line Application", ou seja, a aplicação reside apenas no terminal, se uma interface gráficas, sendo a única forma de comunicação visual entre a máquina e o usuário texto.
+TUI representa "Termina User Interface", ou seja, interfaces visual dentro de Terminais³, sendo composostos por programas que "fingem" ser interfaces visuais, criando botões janelas e etc dentro do terminal.
+³ Terminal é o programa que te permite "falar" com a Máquina atráves de comandos, no windows é o CMD e o Powershell são exemplos. No linux existem diversos. ATENÇÃO: Isto é uma simplificação, existe muito mais lógica por trás de terminais e ainda mais por trás deles também, será entrado em detalhes mais para frente.
+
+
+O Termo Kernel é comumente usado para um sinônimo do segundo significado, mas neste hb, nós focamos no sentido de Sistema Operacional
+Mesmo que, seja possivél rodar programas em uma máquina sem um sistema operacional, a existência de um facilita imensamente a vida do usuário e do programador, além de dar muito mais flexibilidade e poder ao sistema.
+O kernel faz isso disponibilizando uma camada de software para manejar os recursos do sistema, que são limitados.
+
+        O execútavel do Kernel do Linux normalmente fica na dirétorio /boot/vmlinuz
+        ou algo similar. A derivação do nome é histórica, em implementações
+        antigas do UNIX, o kernel era chamado unix. Depois, as implementações
+        que inseriram a memória virtual mudaram o nome do kernel para vmunix
+        No Linux, o nome do arquivo espelha o nome do sistema, subistituindo
+        o "z" no final por um "x", para mostrar que o kernel é um executavel compresso.
+
+
+###         Tarefas Executadas pelo Kernel         ###
+
+Entre Diversas coisas, o kernel faz as seguintes tarefas:
+
+• Process shceduling: (Agendamento de Processos em tradução livre) Um computador tem uma ou mais de uma unidade de processamento (CPUs), nas quais executam intruções do programa. Como outros sistemas UNIX o Linux tem uma "Prempitve multitasking operating system" "Sistema operacional de multi-tarefa preventiva" em uma tradução livre. Multi-tarefa significa que multiplos processos (Exemplos são programas) podem estar na memória simultaneamente e cada um talvez receba uso da CPU(s). Preempitve, "Preventivo" significa que a regras governando que faz usso da CPU(s) e por quanto tempo é determinado pelo "Kernel Process Scheduling", (ao invés do proprio programa)
+
+• Memory Managment: (Gerenciamento de Memória): Mesmo que, as memórias de computador são enormes comparado com os tamanhos de anos atrás, o tamanho dos softwares aumento igualmente, então as memórias físicas (RAM) tem recursos limitados no qual o kernel deve gerenciar e dividir a memória entre os processos , de forma igualitária e eficiente. O Linux assim como outros sistemas operacionais modernos usam um sistema de manejamento de memória virtual (Cita secção no futuro), uma técnica que tem 2 vantagens:
+    • Processos são isolados uns dos outros, pelo kernel sendo assim um processo não pode interferir na memória de outro, como ler ou escrever.
+    • Apenas uma parte do processo precisa ficar na memória ram, sendo assim diminuindo o uso de memória por processo, e permitindo que mais processo fiquem na RAM simultaneamente. Isso leva a um melhor uso da CPU, sendo assim, aumentando a possibilidade de a qualquer momento, tenha pelo menos um processo para que a CPU(s) possa executar.
+
+• Provision of a file system (Provedor de arquivos do sistema): O kernel providencia on sistema de arquivos no disco, permitindo que eles sejam criados, recuperados, atualizados deletados e etc.
+
+• Creation and termination of process (Criação e terminação de processos): O kernel pode carrega um novo programa para a memória e o providenciar com os recursos (Como por exemplo CPU, memória, e acesso à arquivos) que ele precisa para rodar. Um programa quando está em execução se chama processo, e assim que ele completa o kernel garante que ele libere os recursos para que outros programas possam re-utilizar depois.
+
+• Acess to devices (Acesso a dispositivos): Os dispositivos (mouse, monitor, teclado, disk, cds, disquetes e por aí vai) ligados ao seu computador permitem a comunicação entre o computador e o mundo externo permitindo input (entrada) output (saida) ou ambos.
+O kernel providencia uma interace padrão para simplificar o acesso à dispositivos, enquanto ao mesmo tempo permite acessos arbitrários de vários processo para cada dispositivo.
+• Networking (internet): O kernel recebe e manda menssagens de internet (pacotes) no lugar dos processos do usuário. Essa tarefa inclui rotear a os pacotes de internet para o sistema alvo.
+
+#
+
+• Provision of a system call application programming interface (Provisão de um sistema de chamaods para interfaces de aplicativos programavéis (API)): Processos podem pedir ao kernel diversas coisas usando pontos de entrada conhecidos como System Calls (chamadas de sistema)
+
+Além de tudo que já foi citado, sistemas operacionais multi-usuario como o linux geralmente providenciam usuarios com a abstração do Virtual private computer (Computador virtual privado), ou seja, para cada usuário pode logar no sistema e operar de forma independete dos outros usuários. Por exemplo, cada usuário tem seu próprio espaço no disco (Diretório Home), além de que cada usuário ganha um pedaço da CPU e opera no seu próprio espaço de memória virtual, além de interagir com os dispositivos independentemente e usar a internet. O Kernel naturalmente tenta resolver conflitos entre tentativas de acesso de hardware 
+
+
+#### Kernel Mode e User Mode ####
+
+O kernel tem dois ambientes principais, a maioria dos processadores atuais suportam que funcionem nesses dois modo, sendo eles: Modo Usuário e Modo Kernel (também chamado de modo supervisor). Instruções de hardware permitem a troca entre um modo para o outro, assim como areas na memória virtual podem ser maracadas como parte do user do space ou do kernel space. Quando rodando no espaço de usuário, a CPU consegue apenas acessar memória no espaço de usuário. E quando rodando no kernel space, a CPU pode acessar ambas.
+
+
+// Processos versos visão do sistemas //
+
+Em diversas tarefas de programação no dia-dia estamos acustumados a pensar sobre problemas de uma forma focada programação orientada a processos, entretanto devido aos diversos tópicos que serão dissertados nesse guia, é útil para reorientar nossa perspectiva para considerar coisas do ponto de vista do kernel. Para deixar mais claro, agora consideraremos como as coisas são vistas do ponto de vista de um processo e do kernel.
+
+Um sistema funcionando normalmente tem diversos processos, por exemplo coisas acontecendo asincronamente (fora de sincronia). Um processo em execução não sabe quando vai ser a próxima vez que vai ficar "de fora", em que outros processos serão agendados para a CPU (e em que ordem), ou quando vai ser o próximo agendamento (schedule). A entrega de sinais e a ocorrencias de (interprocess) entre processos são manejados pelo kernel, e pode ocorrer a qualuqer momento para um processo.
+
+Um processo normalmente é "burro" sobre a sua estátisticas, por exemplo, ele não sabe onde está localizado na memória ram, e nem mesmo se ele está na ram ou em SWAP (SWAP é um espaço do disco reservado para que o sistema use como memória ram complementar quando necessário). Da mesma forma que um processo não sabe onde que os arquivos que ele acessa estão no disco, ele simplesmente os referencia pelo nome. Um processo opera em isolamneto, ele não consegue se comunicar diretamente com outro processo, um processo por si mesmo não pode criar um novo processo, e nem mesmo terminar o sua própria execução. e um processo não pode se comunicar diretamente com dispositivos de input ou output ligados ao computador.
+
+Do outro lado, "todos" os sistema operacionais tem um kernel, no que controla em tudo e em todos. O kernel facilita a execução de outros processos do sistema. O kernle decide que processo receberá acesso a CPU primeiro, quando ele vai fazer, e por quanto tempo. O kernel mantém estruturas de informação mantendo dados de todos os programas rodando e atualiza essas estruturas quandos novos são criados, quando seus estados são mudados ou encerrados. O kernel mantém todas as estrutura low level que permitem que os nomes do arquivos usados pelos programas sejam traduzidos diretamente para a memória física no disco ou no swap. Todas as comunicações feitas entre os processos são feitas através de mecanismos providenciados pelo kernel. Em resposta chamadas dos programas, o kernle cria e termina processos. E por fim, o kernel, para específico drivers, faz toda a comunicação direta com dispositivos de input e output, transmitindo informação direto do dispostivo para o processo requesitado.
+
+
+Iremos falar mais para frente no guia/Livro coisas como "Um processo pode criar outro processo", "um processo pode criar um pipe (não conheço uma tradução boa para pipe, cano deve servir)", "um processo pode escrever data em um arquivo", e "um processo pode ser terminado chamando _exit()_.". Não se esqueça que ainda assim, é o kernel quem media todas essas ações, e essas expressões são apenas avbreviações para "um processo pode _pedir para que o kernel_ crie outro processo" e etc.
+
+//
+Para mais informações
+Existem textos e livros que cobrem conceitos sobre sistemas operacionais e seus designs, particularmente referencio para sistemas UNIX, incluíndo Tanenbaum, 2007, Tanenbaum & Woodhull 2006, Vahalia 1996, e por último contendo muito conteúdo sobre arquitetura de memória virtual Goodhear & Cox 1994, providenciando detalhes sobre o system V versão 4. Maxwell 1999 tem uma lista anotada de partes selecionados do kernle linux 2.2.5. Lions 1996 é é uma exposição muito bem detalhada da Sexta Edição do código fonte do UNIX que permanecem uma introdução muito útil do UNIX.
+Bovet & Cesati 2005.
+
+
+
+
+
+
+
+
+##########             Introdução à C             #########
+
+Avisos e Dicas Antecipadas
+
+Códigos estarão dentro de ``` código ```
+
+Man se refere ao utilitário de ajuda padrão do linux, ele é de altissima qualidade, porém de dificil interpretação caso você seja iniciante.
+
+
+
+Estarei adiantando a parte de C, em especifico, a parte em C será uma mistura até o momento composta de 2 livros e conhecimento prévio + mais caso de bugs, "hacks" falhas conhecidas e etc.
+
+Tenho como principal objetivo durante a escrita deste guia facilitar o máximo possível a programação em C, devido a isso, mesmo partes simples dó código serão pesadamente discutidas com o objetivo de facilitar e permitir um melhor entendimento da linguagem.
+Dúvidas podem ser adereçadas ao autor.
+O email de contato estará no início e fim do livro/guia.
+
+
+
+////////             Introdução/ Conceitos básicos.            /////////
+Por tradição, o primeiro programa que fazemos em uma linguagem de programação é o "Olá Mundo", que é um programa simples que consiste em mostrar na tela a frase "olá mundo!".
+
+ATENÇÃO!
+
+Toda uma secção para IDE's e Editores de Texto será feita, porém ela não tem a mesma prioridade que a parte do C por si próprio, por isso será atrasada por um período de tempo indeterminado. 
+Caso haja uma requisição deste tema, ele será escrito paralelamente ao C.
+O IDE onde este guia está sendo escrito é o a2 (https://github.com/lucasplaygaemes/a2.git)
+
+(AVISO)
+
+Este será uma descrição detalhada e correta sobre o programa, agora e sempre que necessário, dito isso, aguarde pois grande textos hão de vir.
+
+
+Os números a esquerda representa uma enumeração de cada linha para quando forem ser explicadas.
+Por segurança, eu talvez as deixe na direita para que o código compile.
+
+```
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {             // 1 
+     puts("Olá Mundo!");     // 2
+     return EXIT_SUCESS;     // 3
+}                            // 4
+```
+
+Caso você copie direto do arquivo digital, você pode copiar e colar este programa e ele irá compilar sem erros.
+
+
+
+
+////////             Compilando e Rodando seu Programa             /////////
+
+Agora, iremos compilar e rodar o programa, que envolve dois passos separados.
+Você pode escolher entre inúmeros compiladores de C e o comando para compilar ira depender do compilador. No Linux e outros sistemas tipo-UNIX, você pode invocar o compilador do sistema com o comando cc (c compiler). Para compilar seu programa, digite cc na linha de comando e o nome do arquivo que você quer compilar.
+
+Adendo, este método funciona apenas no Linux e sistemas operacionais tipo-UNIX, em outros sistemas operacionais [Ex.: Windows] procure a documentação para o seu sistema para mais informações. Um breve guia de como compilar programas em C no windows. A parte da IDE que você já deve ter baixado, caso use o VsCode, por ele baixe a extensão do GCC, [GNU COMPILER COLECTTION] e instale, ou baixe o executável pela internet, vá pelo explorador de arquivos na pasta em que o código está, e na barra de diretório digite "cmd", após a janela de terminal abrir, caso o output seja "gcc: fatal error: no input files
+compilation terminated." Parabéns! O GCC foi instalado no seu sistema operacional com sucesso, para compilar arquivos é simples, gcc nome_do_arquivo.c -o nome_do_executavel_desejado, e pronto, para mais informações vá para X.X.X ou leia o manual respectivo do compilador e do Sistema Operacional.
+
+
+Se você escreveu o código corretamente, então um arquivo chamado a.out será criado, no mesmo diretório (Pasta) que o seu código fonte, Inspecione o diretório com o comando _ls_:
+
+------------------------------------------------
+→ ls
+a.out ola.c
+------------------------------------------------
+
+Caso você esteja no windows, rode o comando _dir_ no cmd ou "ls" mesmo caso seja pelo powershell.
+
+
+o arquivo _a.out_ é um programa executável, e pode ser rodado com pela linha de comando com:
+
+------------------------------------------------
+→ ./a.out
+Olá, Mundo!
+------------------------------------------------
+
+Se tudo tiver ocorrido dentro dos conformes, o programa deveria mostrar na tela "Olá, mundo!". Se ele não fizer, compare o seu programa com o do texto listado no primeiro texto de código e garanta que são o mesmo.
+
+Agora, iremos inspecionar linha por linha!
+
+
+////////                 PreProcessor Directives             ////////
+////////                 Diretiva de pré-processador         ////////
+
+
+As duas primeiras linhas do nosso programa usam a diretiva de pré-processor #include, que hajem como se você tivesse pego o o arquivo e colocado no exato mesmo local que os contéudos indicados na linha. Por exemplo, seria igual se você pegasse o arquivo <stdlib.h> e o colasse naquela linha.
+Nós incluímos o <stdio.h> e o <stdlib.h> headers para acessar sas funções declaradas nesses headers, ou seja, existe a função _printf_ que está declarada no _<stdio.h>_ e graças a isso podemos usar ela no nosso códigos.
+
+
+
+
+A função _puts_ é declarada no _<stdio.h>_, e o EXIT_SUCCESS, que é um macro¹ que é definido em _<stdlib.h>_.
+
+Os nomes são na verdade bem simples, autoexplicativos até depois que você aprende.
+_stdio.h_ representa "Standard Input/Output" Ou seja, entrada e saída padrão.
+_stdlib.h_ representa "Standard Libraly" Ou seja biblioteca padrão em C, ela contém diversas declarações e funções em C. Você 99% das vezes precisará incluir ela para poder fazer qualquer programa. Eu já sempre a incluo por padrão.
+
+
+///             Função Principal             ///
+
+A primeira função do programa, como mostrado previamente, começa com¹:
+
+---------------------------------------
+int main(void)
+---------------------------------------
+
+Essa linha define a função _main_ que é o inicio, de quando o programa é chamado. O _main_ e a primeira função chamada em um programa C,(Não é a pura verdade, veja _start_ para mais informações.). A função main é obrigátoria em todo programa C.
+
+Dissecando a linha:
+
+         1    2   3
+        int main(void)
+
+1• ```int``` representa o tipo de variavél, é uma abreviação de "Integer" ou "inteiro" em uma tradução livre.
+
+Oque é um inteiro? 
+
+Tanto na matemática quanto na programação, um inteiro representa um numéro como o nome diz, inteiro, ou seja, sem virgúla, sem ser "quebrado". (Ex: 1, 2, 3...).
+
+Em C, existem diversos tipos de variavéis, para representar diversos de valores ou tipos de informações, aqui uma simples lista com detalhes!
+
+	-----------------------------------------------------------------------	
+	| Tipo          |        Especificação              |     Tamanho     |
+	-----------------------------------------------------------------------
+	| char          | Caractere / Inteiro (-128 a 127)  |  1 byte         |
+	| short         | Inteiro Curto (+/- 32.768)        |  2 bytes        |
+	| int           | Inteiro Padrão x86                |  4 bytes        |
+	| long          | Inteiro Longo (Mesmo que int)     |  4 bytes        |
+	| long long     | Inteiro Estendido de 64 bits      |  8 bytes        |
+	| float         | Ponto Flutuante Simples           |  4 bytes        |
+	| double        | Ponto Flutuante Duplo             |  8 bytes        |
+	| void          | Tipo Vazio / Sem Valor            |  0 bytes        |
+	| ponteiro (*)  | Endereço de Memória Nativo        |  4 bytes        |
+	| unsigned int  | Apenas Positivos (0 a 4.294.. )   |  4 bytes        |
+	-----------------------------------------------------------------------
+
+/////////             ATENÇÃO             /////////
+Isto é o "padrão" em arquiteturas x86, porém ARM e outras podem ter valores diferentes, para ter certeza, você pode verificar por si mesmo!
+Caso queira pular por agora você pode, mas com a função _sizeof_ você pode ver o tamanho da variavél! Veja _Sizeof_ para mais informações e o código está em "sizeof.c";
+
+////////
+
+Main do inglês, "Principal" é a função matriz de qualquer código escrito em C, tanto que sem ele seu programa não irá compilar!
+
+Lembre-se! você pode fazer quantas funções quiser e com quase qualquer nomes, por exemplo, apenas uma função pode ter o nome "Main" e apenas uma função pode ter o nome "printf", caso haja duas, a segunda irá sobreescrever a primeira.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+        
+
+////////                     Manipulação de Horários e Datas             /////////
+
+Fontes: https://www.w3schools.com/c/c_date_time.php
+man(2) time
+
+
+1 Iteração sobre tempo em C.
+
+
+Em C, para podermos ver o horário e a data, usamos o header _UCR_<time.h>_UCR_.
+A biblitoca te permite pegar a hora atual e a formata-lá fazer cáculos que envolvem tempo. 
+
+A função time() funciona retornando o numéro de segundos desde o "Epoch", 1970-01-01 00:00:00 +0000 UTC.
+
+Se tloc(Cite onde tloc é discutido) é um não-NULL (non-null), o valor retornado também é armazenado na memoria pelo tloc.
+Caso sucesso, o valor de segundos desde o Epoch é retornado, em error (time_t) -1 é retornado, e um errno é _setado_ para indicar o erro.
+
+Erros
+EOVERFLOW
+O horário não pode ser representado como um valor time_t (Cite time_t). Isso acontece quando um executável de 32 bits time_t é rodado em um kernel de 64bits quando o horário for 19/01/2038 03:14:08 UTC ou depois. Ainda assim, quando o horário do sistema for definido forá do limite do time_t em outra situações, seu comportamento é un-defined (Cite Comportamentos em C) ou seja não definido (possivelmente aleátorio)
+
+Contéudo mais profundo será discutido na 2 seção designada ao time.
+
+Aplicações com objetivo de funcionar depois de 2038 devem usar ABIs (Cite ABIs) com time_t maior que 32 bits, veja time_t (Cita 2 seção de time)(3type)
+
+
+// Conseguindo horário atual //
+
+
+```
+#include <stdio.h>
+#include <time.h>
+
+int main() {
+    time_t currentTime;
+    time(&currentTime); // Consegue o tempo atual
+    
+    // para contexto, asctime() and mktime() ambas funções recebem um argumento recebendo o horário em pedaços, que é separado em ano mês dia e etc.
+    // O horário em pedaços é armazenado na estrutura tm, descrito em (Cite tm 3type)
+    // ctime() é uma função equivalente a se rodar asctime(localtime(t)). Ela converte o calendário t(Cite T) em uma string terminado-em-null.
+    
+    printf("O tempo atual é: %s", ctime(&currentTime));
+    return 0;
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##########                         BSF ou DFS                     #########
+
+Artigos de Fonte: https: //www.codecademy.com/article/bfs-vs-dfs
+
+Existe a Busca em Largura (BFS) e a busca em profundidade (DFS).
+
+BFS é um metódo de busca transversal de camada-por-camada. Começando a partir da raiz do node (ou qualquer outro ponoto no gráfico.), BFS explora imediatamente seus vizinhos, como por exemplo, nodes a distância de 1, então todos os nodes a distância de dois e etc... Esse faz com que ele seja particularmente bom para achar o caminho mais curto entre grafos (graphs) e tree (arvores) não pesados.
+
+A chave da estrura de dados usado no BFS é a lista do espera (FIFO), quem garante que os nodes são explorados na ordem em que foram descobertos.
+
+Algoritomo:
+    1. Inicializa uma lista ou um cojunto (ou lista) para manter conta dos nodes visitados.
+    2. Começa a explorar as raízes do node e marca como visitado.
+    3. Enquanto a lista não estiver vazia:
+        •Des-lista o node da frente
+        • Processa o node n (ex.: printa e checa se o é o objetivo)
+        • emlista todos os vizinhos não visitados (ou "filhos" de uma arvóre) do node n e marcar-los como visitados
+    4. Repetir enquanto todos os nodes forem explorados ou um objetivo for encontrado.
+
+``
+/* código de exemplo para uma busca em largura em C
+ * Este código é usado para exemplificar a lógica 
+ * e não uma regra de otimização, mesmo que haja.
+ */
+ 
+#include <stdio.h>             // Para permitir usar funções como printf
+#include <stdlib.h>            // Permite usar funções como malloc
+#include <stdbool.h>           // para usar o tipo booleano
+
+
+
+
+// Estrutura para a lista de adjacência
+// Cada vértice do grafo terá uma lista de vizinhos, esaa estrutura representa um elemento (um nó) dessa lista
+struct Node {
+    int vertex;             // Guarda o numéro do vertice do vizinho
+    struct Node* next;      // Ponteiro para o próximo vizinho da lista, como em uma lista encadeada(Cite "Lista Encadeada", X.X.X ?) simples.
+    
+};
+
+
+
+// Estrutura para o Grafo
+// Representa o garfo como um todo
+struct Graph {
+    int numVertices;             // guarda o total de vértice que o grafo possui
+    struct Node** adjLists;      // um ponteiro para ponteiro (Na prática, é um array onde cada posição huarda o inicio de uma lista encadeada, uma lista de adjacência)
+    bool* visited;                // um array booleano, cada posição i indica se a vetice i já foi visitada pelo algoritimo (true ou false)
+};
+
+
+
+// Estrutura para a Fila (Queue)
+struct Queue {
+    int items[100];             // um array estático que suporta 100 elementos na fila
+    int front;                  // Guarad o indice do inicio da fila
+    int rear;                   // Guarda o indiice do final da fila
+};
+
+
+
+
+// Funções e manipulação 
+
+// Cria um nó
+struct Node* createNode(int v) {
+    struct Node* newNode = malloc(sizeof(struct Node));  // Aloca memória diretamente para um novo nó
+    newNode->vertex = v;                                 // Define que esse nó representa o vétice v
+    newNode->next = NULL;                                // Como ele acabou de ser criado, ainda não aponta para nenhum nó
+    return newNode;                                      // Retorna o primeiro nó criado.
+}
+
+
+
+
+// Cria o grafo
+struct Graph* createGraph(int vertices) {
+    struct Graph* graph = malloc(sizeof(struct Graph));
+    graph->numVertices = vertices;
+    // aloca memória para estrutura principal  e define a quantidade de vertices
+    
+    graph->adjLists = malloc(vertices * sizeof(struct Node*));
+    graph->visited = malloc(vertices * sizeof(bool));
+    
+    // aloca memória para o array de listas de adjacencia (uma lista para cade vertice) e para o array de marcação de visitas
+    
+    for (int i = 0; i < vertices; i++) {
+        graph->adjLists[i] = NULL;
+        graph->visited[i] = false;
+    }
+    return graph;
+    // um laço de for que inicializa todas as listas como vazias (NULL) e define que nenhum vértice foi visitado ainda (False). No final retorna o grafo pronto
+}
+
+
+
+// Adicionando arestas (conexões)
+void addEdge(struct Graph* graph, int src, int dest) {
+    // Adiciona de src para dest
+    struct Node* newNode = createNode(dest);
+    newNode->next = graph->adjLists[src];
+    graph->adjLists[src] = newNode;
+    
+    // a newMode->... faz o novo nó apontar para o antigo primeiro elemento da lista.
+    // graph->adjL... transforma o novo nó no topo da lista.
+    
+    // Adiciona de dest para src (grafo não direcionado)
+    newNode = createNode(src);
+    newNode->next = graph->adjLists[dest];
+    graph->adjLists[dest] = newNode;
+    
+    // Como o grafo é _não direcionado_ (se _src_ se conecta a _dest_, então _dest_ também se conecta a _src_), o código se repete e o processo de forma invertida, adicionado _src_ na lista de _dest_
+}
+
+
+
+
+// Funções da Fila
+struct Queue* createQueue() {
+    struct Queue* q = malloc(sizeof(struct Queue));
+    q->front = -1;
+    q->rear = -1;
+    return q;
+    // aloca a fila e define -1 para front e rear, indicando que ela está vaiza.
+}
+
+
+bool isEmpty(struct Queue* q) {
+    if (q->rear == -1)
+        return true;
+    else
+        return false;
+        
+    // se o final (rear) for -1, siginifica que nenhum elemento válido está na fila, logo ela está vazia.
+}
+
+
+
+void enqueue(struct Queue* q, int value) {
+    if (q->rear == 99)
+        printf("\nA fila está cheia!");
+    else {
+        if (q->front == -1)
+            q->front = 0;
+        q->rear++;
+        q->items[q->rear] = value;
+    }
+    
+    // Insere um elemento no final da fila. Se for o primeirissimo elemento, ajusta o _front_ para 0, em seguida, avança i índice _rear_ e joga o valor lá dentro.
+}
+
+
+
+int dequeue(struct Queue* q) {
+    int item;
+    if (isEmpty(q)) {
+        printf("\nA fila está vazia");
+        item = -1;
+    } else {
+        item = q->items[q->front];
+        q->front++;
+        if (q->front > q->rear) {
+            q->front = q->rear = -1;
+        }
+    }
+    return item;
+    // remove e retorna o elemnto do inicio da fila (_front_)
+    // Avança o _front++_. se o _front_ passar o _rear_, siginific aque a fila esvaziou completamnete, então ambos são reiniciados para -1.
+}
+
+
+
+// Algoritmo BFS
+
+void bfs(struct Graph* graph, int startVertex) {
+    struct Queue* q = createQueue();
+    // inicializa o algoritmo criando a fila auxiliar necessaria para o rastreamento.
+    
+    
+    graph->visited[startVertex] = true;
+    enqueue(q, startVertex);
+    // marca o vértice como visitado e joga na fila para começar a exploração.
+    
+    
+    while (!isEmpty(q)) {
+        int currentVertex = dequeue(q);
+        printf("Visitado: %d \n", currentVertex);
+        // Enquanto houver elementos na fila, o código retira o próximo vértice da vez (_currentVertex_) e o imprime na tela
+        
+        
+        struct Node* temp = graph->adjLists[currentVertex];
+        // Pega o primeiro vizinho da lista de adjacencia desse vertcie atual
+        
+        while (temp != NULL) {
+            int adjVertex = temp->vertex;
+            // um laço que vai percorrer todos os vizinhos atual. _adjVertex_ armazena quem é o vizinho da iteração atual
+            
+            
+            if (graph->visited[adjVertex] == false) {
+                graph->visited[adjVertex] = true;
+                enqueue(q, adjVertex);
+            }
+            // regra de ouro, se o vizingo ainda não foi visitado (false), nós o marcamos imediatamente como visitado (true) e o colocamnos na fila (enque) para que seus proximos vizinhos sejam explorados mais tarde
+            
+            
+            temp = temp->next;
+            // avança para o próximo vizinho da lista. Quando acabar os vizinhos (temp == NULL), sai desse laço e volta para o laço da fila.
+            
+        }
+    }
+}
+
+
+
+int main() {
+    struct Graph* graph = createGraph(4);
+    addEdge(graph, 0, 1);
+    addEdge(graph, 0, 2);
+    addEdge(graph, 1, 2);
+    addEdge(graph, 2, 3);
+    
+    // Cria um garfo com 4 vértices (indetificados como 0123) e adiciona 4 arestas, desehando a seguinte estrutura
+    // desenhando a seguinte estrutura.
+    //· O 0 se conecta a 1 e o 2 .
+    //· O 1 se conecta ao 2.
+    //· O 2 se conecta ao 3.
+    
+    
+    printf("Iniciando Busca em Largura (a partir do vértice 0):\n");
+    bfs(graph, 0);
+    return 0;
+    
+    // chama a função bfs inciando no vetice 0
+    // a saida esperada mostrara a ordem da onda de visitação, primeiro o 0, depois os vizinhos diretos deles (1 e 2) e por fim o do vizinho do vizinho (3);
+}
+```
+
+
+
