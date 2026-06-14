@@ -272,11 +272,30 @@ As duas primeiras linhas do nosso programa usam a diretiva de pré-processor #in
 Nós incluímos o <stdio.h> e o <stdlib.h> headers para acessar sas funções declaradas nesses headers, ou seja, existe a função _printf_ que está declarada no _<stdio.h>_ e graças a isso podemos usar ela no nosso códigos.
 
 
-
-
 A função _puts_ é declarada no _<stdio.h>_, e o EXIT_SUCCESS, que é um macro¹ que é definido em _<stdlib.h>_.
 
-Os nomes são na verdade bem simples, autoexplicativos até depois que você aprende.
+O macro de _EXIT_SUCESS_ tem o mesmo exato papel de _return 0_, ambos indicam que o programa foi executado sem problemas!
+
+¹ Macro é um nome dado um valor ou um comando que tem o objetivo de ser um encurtador, por exemplo, você pode escrever toda vez manualmente um valor no seu código, como exemplo 5000.
+Mas caso precise mudar, terá que mudar todas as ocorrências dele, para facilitar, você pode criar um macro com o nome de VALOR e depois colocar o valor que você deseja, assim, o pré-processador que faz diversos trabalhos por trás antes do código ser sequer compilado em C, irá substituir toda vez que VALOR aparece pelo valor que você determinar, como um exemplo não codal :
+
+"Eu tenho 5000 lápis em casa, mas dos 5000 mil apenas 3000 mil são pretos e 2000 mil são vermelhos, ao todo tenho 5000 lápis que eu não uso nem 10, quem dirá 5000?"
+
+O número 5000 aparece 4 vezes, se o numero fosse diferente teria que ser trocado quatro vezes, porém, usando um macro, ficaria assim:
+
+"Eu tenho LAPIS lápis em casa, mas dos LAPIS  mil apenas 3000 mil são pretos e 2000 mil são vermelhos, ao todo tenho LAPIS lápis que eu não uso nem 10, quem dirá LAPIS?"
+
+A palavra, ou no caso, o macro LAPIS será substituído pelo valor atribuído a ele, assim facilitando a troca de diversos valores sem necessariamente editar diversos lugares a mão.
+
+A sintaxe para se definir um macro é :
+
+```
+#define NOME_DO_MACRO MACRO
+```
+
+Bem simples não é mesmo?
+
+Os nomes são na verdade bem simples também, autoexplicativos até depois que você aprende.
 _stdio.h_ representa "Standard Input/Output" Ou seja, entrada e saída padrão.
 _stdlib.h_ representa "Standard Libraly" Ou seja biblioteca padrão em C, ela contém diversas declarações e funções em C. Você 99% das vezes precisará incluir ela para poder fazer qualquer programa. Eu já sempre a incluo por padrão.
 
@@ -320,20 +339,60 @@ Em C, existem diversos tipos de variavéis, para representar diversos de valores
 	-----------------------------------------------------------------------
 
 /////////             ATENÇÃO             /////////
+
 Isto é o "padrão" em arquiteturas x86, porém ARM e outras podem ter valores diferentes, para ter certeza, você pode verificar por si mesmo!
 Caso queira pular por agora você pode, mas com a função _sizeof_ você pode ver o tamanho da variavél! Veja _Sizeof_ para mais informações e o código está em "sizeof.c";
 
 ////////
 
-Main do inglês, "Principal" é a função matriz de qualquer código escrito em C, tanto que sem ele seu programa não irá compilar!
+2• Main do inglês, "Principal" é a função matriz de qualquer código escrito em C, tanto que sem ele seu programa não irá compilar!
 
-Lembre-se! você pode fazer quantas funções quiser e com quase qualquer nomes, por exemplo, apenas uma função pode ter o nome "Main" e apenas uma função pode ter o nome "printf", caso haja duas, a segunda irá sobreescrever a primeira.
-
-
+Lembre-se! você pode fazer quantas funções quiser e com quase qualquer nomes, mas não todos, por exemplo, apenas uma função pode ter o nome "Main" e apenas uma função pode ter o nome "puts", caso haja duas, a segunda irá sobrescrever a primeira, E o compilador gcc irá te avisar sobre isso e retornara erro.
 
 
+/////////
+
+3• Oque significa aquele "void" entre parênteses?
+
+Toda função recebe argumentos! ou na verdade, toda função pode receber argumentos, mas não é obrigatório. Quando colocamos o "void" dentro do parênteses deixamos explícito que a função _main_ não irá receber nenhum parâmetro de qualquer seja.
 
 
+/////////                 Tema Importante            //////////
+
+Caso já não tenha percebido, as funções em C tem seu tipo definido por uma variável que normalmente pode conter um valor, por que disso ?
+
+C é uma linguagem onde o valor 0 diz que tudo ocorreu com sucesso, 1, ou -1 que houve um erro, dito isso, é por isso que no final de quase se não todo programa em C, colocamos a linha "return 0" para que caso esteja tudo tenha executado de forma correta, o valor de main é igual a 0, ou seja, tudo ocorreu corretamente e o programa pode rodar em problemas.
+
+O mesmo se aplica para outras funções como por um exemplo neste código :
+
+```
+#include <stdio.h>
+
+// Declaração das variavéis
+int a;
+int b;
+
+// Função para somar numeros
+int funcao_soma() {
+    int a = 10;
+    int b = 20;
+    int c = a + b;
+    return c; // Retorna o valor de C, ou seja, quando está função for chamada, ela será subistuida pelo valor de c, que no nosso caso é 30
+}
+
+int main() {
+    printf("O valor da soma é: %d", funcao_soma());
+    return 0; // Retorna 0, ou seja, o programa executou com sucesso
+}
+```
+
+Aqui temos dois ótimos exemplos, o primeiro, como você pode chamar uma função e ela representar um valor, como na seguinte linha, vamos dissecar-la :
+
+printf("O valor da soma é: %d", funcao_soma());
+   1                        2         3
+
+1• Aqui chamamos a função _printf_ onde irá imprimir na tela um texto, no meio deste texto, colocamos o "%d", ele é um especificador de formato, ou seja, ele funciona de uma forma bem simples, você ao chamar-lo, pode substituir o local onde ele está por um parâmetro da sua escolha  
+   
 
 
 
