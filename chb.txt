@@ -179,10 +179,6 @@ Bovet & Cesati 2005.
 
 
 
-
-
-
-
 ##########             Introdução à C             #########
 
 Avisos e Dicas Antecipadas
@@ -209,6 +205,23 @@ ATENÇÃO!
 Toda uma secção para IDE's e Editores de Texto será feita, porém ela não tem a mesma prioridade que a parte do C por si próprio, por isso será atrasada por um período de tempo indeterminado. 
 Caso haja uma requisição deste tema, ele será escrito paralelamente ao C.
 O IDE onde este guia está sendo escrito é o a2 (https://github.com/lucasplaygaemes/a2.git)
+
+
+
+
+/////////             Versões             //////////
+
+C é uma linguagem que já existe a muito tempo, sendo assim, tem diversas versões. As versões são nomeadas com base no ano que elas foram lançadas, por exemplo o C17, que é a versão de C desenvolvida em 2017, ou a C99, que foi desenvolvida em 1999, porém, existem nuances, algumas fontes citam o C89 como o C99, mas são versões diferentes com características diferentes. Dito isso eu farei a distinção entre ambas e citarei.
+
+
+
+
+
+
+
+
+
+
 
 (AVISO)
 
@@ -394,24 +407,55 @@ printf("O valor da soma é: %d", funcao_soma());
 1• Aqui chamamos a função _printf_ onde irá imprimir na tela um texto, no meio deste texto, colocamos o "%d", ele é um especificador de formato, ou seja, ele funciona de uma forma bem simples, você ao chamar-lo, pode substituir o local onde ele está por um parâmetro da sua escolha  
    
 
+Agora que você sabe que o "return 0" diz que tudo ocorreu com sucesso, e que o "return 1" diz que houve algum erro, lembre-se que, assim que você definir o "return 0", o código entenderá que tudo está correto e que já pode finalizar, mesmo que haja mais linhas na frente, elas não serão executadas!
 
+Ex.:
 
+```
+#include <stdio.h>
 
-
-
-
-
-
+int main() {
+    printf("Eu estou sendo executado!\n"); // 1
     
+    return 0; // 2
     
-    
-        
+    printf("Eu nunca serei executado!\n"); // 3
+}
+```
+
+1• A primeira linha é executada normalmente.
+2• Você diz na função main, ou seja para o programa, retornar 0, sendo assim, que tudo oque era necessário acontecer ou funcionar, aconteceu e funcionou! pelo menos dentro da função main. Sendo assim o programa termina sua execução ali mesmo.
+3• A execução do programa já foi encerrada, então a 3 linha nunca será executada.
+
+
+
+
+/////////             Portabilidade             /////////
+
+Todo compilador de C, tem pelo menos pequenas diferenças, e eles continuam a ser atualizados e melhorados, sendo assim, compiladores como o GCC podem ter suporte completo ao C17 mas não talvez a última versão de C, outros compiladores podem não ter essas versões ou compatibilidade total.
+
+A implementação de atualizações das novas versões de C tendem a demorar bastantes e estar atrás do padrão C atual.
+
+Programas escritos em uma versão específica de C, devem ser compilados apenas a mesma versão que foi escrito, ele pode não compilar e caso compile pode ter um comportamento não previsível,
+
+Mas existem diversos tipos de comportamentos em C, dentre eles :
+
+• Comportamento bem definido.
+• Comportamento não especificado.
+• Comportamento indefinido.
+• Comportamento Local específico.
+• Extensões comuns.
+
+
+
+
+
 
 ////////                     Manipulação de Horários e Datas             /////////
 
 Fontes: https://www.w3schools.com/c/c_date_time.php
 man(2) time
-
+Ĝ
 
 1 Iteração sobre tempo em C.
 
@@ -452,6 +496,19 @@ int main() {
     return 0;
 }
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
