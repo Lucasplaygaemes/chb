@@ -472,39 +472,12 @@ Desenvolvedores normalmente confundem comportamento não definido com erros ou f
 implementador pode aprimorar a linguagem fornecendo uma definição do
 comportamento oficialmente indefinido.
 
+Esses três são bem diferentes mas todos são considerados problemas de portabilidades. Os compiladores (interpretações) tem a possibilidade de fazer as seguintes coisas:
+• Ignorar o comportamento completamente e dando resultados imprevisíveis.
+• Comportar de uma forma documentada e característica do ambiente com ou sem diagnósticos.
+• Terminar a "tradução" ou execução (direcionando o problema).
 
-
-
-
-
-
-
-
-
-
-
-Comportamento não definido é quando não podemos 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Todas as opções são ruins, especialmente a primeira, então sempre é bom evitar esse tipo de situação.
 
 ////////                     Manipulação de Horários e Datas             /////////
 
