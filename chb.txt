@@ -440,14 +440,26 @@ Programas escritos em uma versão específica de C, devem ser compilados apenas 
 
 Mas existem diversos tipos de comportamentos em C, dentre eles :
 
-• Comportamento bem definido.
+• Comportamento Definido por implementação.
 • Comportamento não especificado.
 • Comportamento indefinido.
 • Comportamento Local específico.
 • Extensões comuns.
 
+Isto é, de acordo com Annex J, do padrão de documentos de C, ao longo da sua aprendizagem da linguagem C, você irá se deparar com todos esse tipos de comportamentos, é muito importante que você conheça todos eles! 
 
 
+/////////             Definido por implementação             /////////
+
+É um programa em que sua implementação não é bem definida pelo padrão C que pode ter resultados diferentes entre implementações, mas tem um comportamento consistente e documentado.
+
+Um exemplo é o número de bits¹ em um byte²
+
+¹ Bit é a unidade básica de medida de computadores, ele pode valer 0 ou 1.
+² Byte é normalmente o nome dado ao agrupamento de 8 bits.
+
+A maioria das implementações são inofensivas, mas podem causar bugs entre implementações, mas sempre que possível evitar escrever este tipo de implementações.
+Eu irei dizer quando a implementação for definido por implementação.
 
 
 
