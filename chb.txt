@@ -462,6 +462,49 @@ A maioria das implementações são inofensivas, mas podem causar bugs entre imp
 Eu irei dizer quando a implementação for definido por implementação.
 
 
+/////////                 Comportamento não definido             /////////
+
+Desenvolvedores normalmente confundem comportamento não definido com erros ou falhas ao seguir o padrão de C, mas a intenção de considerar isso é intencional e considerada, esse são comportamentos classificados como não definidos pelo committee de C :
+
+• Dá ao implementador a licença de não pegar um erro no programa quando ele é difícil de ser diagnosticado.
+• Evitar definir casos obscuros que iriam beneficiar uma implementação sobre outra.
+• Identificar áreas de possível extensão da linguagem em conformidade nas quais o
+implementador pode aprimorar a linguagem fornecendo uma definição do
+comportamento oficialmente indefinido.
+
+
+
+
+
+
+
+
+
+
+
+
+Comportamento não definido é quando não podemos 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ////////                     Manipulação de Horários e Datas             /////////
 
