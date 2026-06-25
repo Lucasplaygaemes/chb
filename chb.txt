@@ -479,6 +479,46 @@ Esses três são bem diferentes mas todos são considerados problemas de portabi
 
 Todas as opções são ruins, especialmente a primeira, então sempre é bom evitar esse tipo de situação.
 
+
+
+/////////             Ponteiros             /////////
+
+Oque são ponteiros?
+
+Ponteiros é um tipo de variável que armazena a informação de um lugar na memória, ou seja, ao invés de ser como uma variavel normal e ser como uma caixa guardando informação dentro, o ponteiro guarda um pedaço de papel falando onde a caixa está.
+
+Ponteiros são exclusivos de linguagens de mais baixo nível, como por exemplo C, porém também tem em c++, go e rust tem, porém existe nuances e diferenças na forma de como cada uma foi implementada.
+
+Ponteiros são ótimos para diversas coisas e são indispensáveis em C, porém você talvez só perceba mais para frente.
+Quando uma variável é criada em C, seu endereço de memória é assinalado a ela.
+
+O endereço de memória é o local onde a variável está armazenada no seu computador.
+
+Para acessarmos, usando o operador "&", por exemplo :
+
+```
+#include <stdio.h>
+
+int main() {
+    int minha_idade = 23;
+    printf("%p", &minha_idade);
+    return 0;
+}
+```
+
+
+
+
+/////////                 Arquivos             /////////
+
+
+
+
+
+
+
+
+
 ////////                     Manipulação de Horários e Datas             /////////
 
 Fontes: https://www.w3schools.com/c/c_date_time.php
