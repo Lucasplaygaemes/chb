@@ -603,11 +603,46 @@ Exemplo :
 float divisao = 5 / 2;
 
 printf("%f", divisao); // O valor que irá sair é de 2.000000
+```
+
+Mas porque o valor continua sendo 2? e o 0.5? Bem, isso acontece devido ao fato que 5 e 2 ainda são inteiros na divisão. Nesse caso, você precisa manualmente converter esses dígitos de inteiros para números de ponto flutuante. Como ? Assim :
 
 
+//////                    Conversão Explícita
+
+Conversão explícita é feita manualmente através de parênteses (), antes do valor ser declarado.
+Veja como podemos solucionar o problema acima:
+
+´´´
+// Conversão manual: de int para float
+
+float divisao = (float) 5 / 2;
+
+printf("%f", divisao);     // 2.500000
+```
+
+Você também pode colocar na frente de uma variável, como por exemplo :
+
+```
+int num1 = 5;
+int num2 = 2;
+
+float divisao = (float) num1 / num2;
+```
+
+O valor de divisao é 2.500000, porém caso você queira você pode retirar os zeros extras!
+De uma forma bem simples, usando _.Xf_ Onde X representa o número de casas após a vírgula, por exemplo :
+
+```
+int num1 = 5;
+int num2 = 2;
+
+float divisao = (float) num1 / num2;
+
+printf("%.1f", divisao); // O .1 diz números após a vírgula, e o f diz que é float, logo o output é 2.5!
+```
 
 /////////                 Arquivos             //////////
-
 Existem diversas formas de se ler arquivos em C,
 
 
