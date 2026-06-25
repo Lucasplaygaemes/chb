@@ -507,11 +507,108 @@ int main() {
 ```
 
 
+/////////             Comentários             //////////
+
+Existe dois modos para fazer comentários em códigos em C, para simples e que comentem apenas uma linha usasse "//"
+Exemplos :
+
+```
+#include <stdio.h>
+
+int main() {
+    printf("Funcao para fazer X"); // Essa funcao faz X coisas
+    return 0;
+}
+```
+
+As "//" representam um cometário, elas comentam apenas apatir de onde forem colocadas e na linha atual, são chamadas de cometários de "linha-única".
+
+Já a outra forma mais completa que te permite comentar mais texto é com "/* */"
+Tudo que estiver entre eles será comentado, e o compilador ignorará.
+
+Exemplo : 
+
+```
+#include <stdio.h>
+int main() {
+    printf("Funcao para fazer X"); // Essa funcao faz X coisas
+    return 0;
+}
+
+/*
+int funcao() {
+    printf("Funcao para fazer Y");
+    return 0;
+}
+*/
+```
 
 
-/////////                 Arquivos             /////////
+No a2, e em outros IDE's, o texto comentado estará com outra cor, mas todo o espaço entre os /* */ foi comentado.
+
+/////////             Conversão de Tipos             ////////
+
+Pode acontecer que você precise converter um valor de um tipo de dado para outro, isso se chama conversão de tipos em tradução livre.
+
+Por exemplo, caso você deseje dividir 5 por 2, você espera o resultado 2.5, mas como normalmente usamos inteiros (e não valores com ponto flutuante) ele irá apenas nos  dar o valor 2 :
+
+```
+int x = 5;
+int y = 2;
+int sum = 5 / 2;
+
+printf("%d", sum); // o valor que sai é apenas 2
+```
 
 
+Para conseguirmos o resultado correto, você precisa entender como a conversão de tipos funciona em C, temos 2 tipos :
+
+Conversão Explícita.
+Conversão Implícita.
+
+/////             Conversão Implícita
+A conversão implícita é feita automaticamente pelo compilador quando você assinala um valor de um tipo para outra.
+
+Por exemplo, se você assinalar um valor de um _int_ para um _float_ :
+
+```
+// Conversao automatica
+
+float meu_float = 9;
+
+printf("%f", meu_float); // O valor printado será de 9.000000
+```
+
+Como você pode ver, o compilador automaticamente converte o valor de 9 para 9.000000.
+
+Isso pode ser perigoso, já que você pode perder o controle da conversão em certas situações.
+
+Especialmente se for ao contrário, o próximo exemplo automaticamente converte o valor de 9.99 para 9 :
+
+```
+// Conversão automática: de float para int
+
+int meu_inteiro = 9.99;
+
+printf("%d", meu_inteiro); // O valor que sairá é de 9
+```
+
+Oque aconteceu com o .99? Podemos precisar desse valor! então tome cuidado. É importante ressaltar que você saiba como o compilador irá funcionar nessas situações para evitar resultados inesperados.
+
+Como um outro exemplo, caso você queira dividir dois inteiros, 5 por 2, você sabe que o resultado é 2.5, e como já falamos se você guardar o resultado em um inteiro irá perder o .5, ou seja, é importante que você armazene esse valor em uma variável do tipo _float_ ou _double_.
+
+Exemplo :
+
+```
+float divisao = 5 / 2;
+
+printf("%f", divisao); // O valor que irá sair é de 2.000000
+
+
+
+/////////                 Arquivos             //////////
+
+Existem diversas formas de se ler arquivos em C,
 
 
 
