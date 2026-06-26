@@ -642,6 +642,37 @@ float divisao = (float) num1 / num2;
 printf("%.1f", divisao); // O .1 diz números após a vírgula, e o f diz que é float, logo o output é 2.5!
 ```
 
+
+/////////             Constantes
+
+Agora que você viu a diferença entre variáveis em C, você deve imaginar que as vezes certos valores devem mudar e as vezes eles não devem mudar.
+Isso pode ser feito com a palavra chave _const_ que vem do inglês "Constant" ou seja constante, que não muda ao longo da execução do programa, ele não pode ser editado e pode apenas ser lido.
+
+Exemplo :
+```
+const int meu_numero = 15; // o valor de 15 
+
+meu_numero = 10; // Dará um erro : assinalamento a variável que é de apenas-leitura
+```
+
+Você pode e deve declarar variáveis constantes em valores que não mudam, como minutos de uma hora ou segundos de uma hora.
+Você também é obrigado a declarar uma variável e assinar-la um valor, caso o contrário um erro irá retornar.
+
+Uma outra boa prática é que para melhorar a leitura do código, as variáveis constantes fossem declaradas em caixa alta.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
 /////////                 Arquivos             //////////
 Existem diversas formas de se ler arquivos em C,
 
