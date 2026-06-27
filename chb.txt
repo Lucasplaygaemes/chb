@@ -659,10 +659,27 @@ Você pode e deve declarar variáveis constantes em valores que não mudam, como
 Você também é obrigado a declarar uma variável e assinar-la um valor, caso o contrário um erro irá retornar.
 
 Uma outra boa prática é que para melhorar a leitura do código, as variáveis constantes fossem declaradas em caixa alta.
- 
 
+//////////             Operadores
 
+Operadores são usados para para fazer ações com varáveis e valores.
+Existem diversos tipos de operadores, então podem ser divididos em categorias, aqui os tipos :
 
+///// Operadores Aritméticos
+
+A seguir uma tabela com os operadores aritméticos
+
++----------+---------------+--------------------------------------------+---------+
+| Operador | Nome          | Descrição                                  | Exemplo |
++----------+---------------+--------------------------------------------+---------+
+|    +     | Adição        | Soma dois valores                          |  x + y  |
+|    -     | Subtração     | Subtrai um valor de outro                  |  x - y  |
+|    *     | Multiplicação | Multiplica dois valores                    |  x * y  |
+|    /     | Divisão       | Divide um valor por outro                  |  x / y  |
+|    %     | Módulo        | Retorna o resto da divisão                 |  x % y  |
+|    ++    | Incremento    | Aumenta o valor de uma variável em 1       |   ++x   |
+|    --    | Decremento    | Diminui o valor de uma variável em 1       |   --x   |
++----------+---------------+--------------------------------------------+---------+
 
 
 
