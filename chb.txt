@@ -662,7 +662,7 @@ Uma outra boa prática é que para melhorar a leitura do código, as variáveis 
 
 //////////             Operadores
 
-Operadores são usados para para fazer ações com varáveis e valores.
+Operadores são usados para fazer ações com varáveis e valores.
 Existem diversos tipos de operadores, então podem ser divididos em categorias, aqui os tipos :
 
 ///// Operadores Aritméticos
@@ -681,12 +681,42 @@ A seguir uma tabela com os operadores aritméticos
 |    --    | Decremento    | Diminui o valor de uma variável em 1       |   --x   |
 +----------+---------------+--------------------------------------------+---------+
 
+Todas essas operações você pode fazer entre variáveis e números, e números com variáveis.
+Essas são as operações básicas de C, que se fazem em diversas ocasiões.
 
+Os operadores básicos como soma divisão multiplicação e etc você já deve ser como usar.
+Incremento e Decremento são duas operações diferentes, elas são auto-explicativas, eles incrementam e decrementam por 1, exemplo :
 
+```
+int idade = 19;
 
+printf("Minha idade atual é: %d", idade); // O Valor de idade é 19
 
+idade++;
 
+printf("Minha idade atual é: %d", idade); // O valor de idade agora é 20
 
+idade--;
+
+printf("Minha idade atual é: %d", idade); // O valor de idade agora é 19 denovo
+```
+
+///// Operadores 
+
++--------------------------------------------------------------------------------------------------+
+| Operador | Exemplo | Igual A    | Descrição							|
+|     =    | x = 5   | x = 5      | Atribui o valor 5 a x      					|
+|    +=    | x += 3  | x = x + 3  | Soma 3 ao valor de x					        |
+|    -=    | x -= 3  | x = x - 3  | Subtrai 3 do valor de x 					|
+|    *=    | x *= 3  | x = x * 3  | Multiplica x por 3 						|
+|    /=    | x /= 3  | x = x / 3  | Divide x por 3 						|
+|    %=    | x %= 3  | x = x % 3  | Atribui o resto da divisão de x por 3 			|
+|    &=    | x &= 3  | x = x & 3  | Aplica a operação lógica E (AND) bit a bit 			|
+|   \|=    | x \|= 3 | x = x \| 3 | Aplica a operação lógica OU (OR) bit a bit 			|
+|    ^=    | x ^= 3  | x = x ^ 3  | Aplica a operação lógica OU Exclusivo (XOR) bit a bit 	|
+|   >>=    | x >>= 3 | x = x >> 3 | Desloca os bits de x para a direita em 3 posições 		|
+|   <<=    | x <<= 3 | x = x << 3 | Desloca os bits de x para a esquerda em 3 posições 		|
++--------------------------------------------------------------------------------------------------+
 
 
 
