@@ -179,6 +179,57 @@ Bovet & Cesati 2005.
 
 
 
+
+//////////             Lógica De Programação             //////////
+
+A lógica de programação simplesmente é a lógica na qual computadores pensam e executam, saber como eles fazem isso é de suma importância no aprendizado de qualquer linguagem de programação, e C não é exceção!
+
+Primeiro vamos começar com algo mais simples, ou seja, Binário! 
+
+/////                 Binário                          /////
+
+A base binária é simples, mas para entendermos ela precisamos entender a que já usamos, a decimal, ou seja, na base 10.
+Por exemplo, Para escrever o número 721, podemos escrever em 7 Centenas, 2 Dezenas e 1 unidade, ou  70 Dezenas, 20 Dezenas e 1 unidade.
+Como todos nós sabemos existem 10 numerais na base 10, de 0 a 9, atenção que começamos a contar do 0, e não existe o numeral 10, é apenas o 1 mais o 0.
+
+Já o binário, funciona apenas com 0 e 1, sendo assim é extremamente rápido, pois lida apenas com "contas simples".
+
+Porém pense que temos apenas valores que podem ser 0 ou 1, O nome da cada valor que pode alternar entre 0 e 1 são chamados de Bits!
+Para os representar, vamos usar 1 e 0 e | e X, sendo a barra para 1 e o X para 0, mas qualquer par de algarismos também serve.
+
+Para contar em binário contamos da direita para a esquerda, e não da esquerda para direita igual em decimal.
+
+Imagine que todos estão desligado! Sem atribuirmos valores para eles ainda.
+
+                               ↓
+... X   X    X   X  X  X X X X X
+
+Isso mostra que todos os bits estão desligados! Valor 0!
+Caso liguemos o primeiro bit, que então terá o valor de 1, qual será o valor total?
+1!
+
+E lembre-se de que, o valor do próximo bit é o último vezes dois, sendo assim :
+
+Temos está lista! 
+                               ←                                 
+... 512 256 128 64 32 16 8 4 2 1 
+
+
+Como é um sistema binário, as unidades são múltiplas de 2. Para representar números, como 5, você pode o representar como a soma de 1 mais 4!
+
+Ou seja, pense novamente que a | é para ter o valor de 1, ou no caso, ligado!
+
+                           |   |
+... 512 256 128 64 32 16 8 4 2 1
+
+Isto representa o número 5! Para o número 6 podemos fazer o 4 e o 2!
+Muito simples não é! 
+
+Caso já não tenha percebido, você pode fazer isso com a suas mãos! Ou seja, você pode começar a contar usando a base binária! 
+Para fazer isso é simples, considere o dedo abaixado como 0 e o levantado como 1, então você pode fazer igual fez aqui!
+Tente em Casa! faça o número 31, 12, 53, 87, 100, 220! Faça usando um papel e caneta ou com seus próprios dedos!
+
+
 ##########             Introdução à C             #########
 
 Avisos e Dicas Antecipadas
@@ -212,14 +263,6 @@ O IDE onde este guia está sendo escrito é o a2 (https://github.com/lucasplayga
 /////////             Versões             //////////
 
 C é uma linguagem que já existe a muito tempo, sendo assim, tem diversas versões. As versões são nomeadas com base no ano que elas foram lançadas, por exemplo o C17, que é a versão de C desenvolvida em 2017, ou a C99, que foi desenvolvida em 1999, porém, existem nuances, algumas fontes citam o C89 como o C99, mas são versões diferentes com características diferentes. Dito isso eu farei a distinção entre ambas e citarei.
-
-
-
-
-
-
-
-
 
 
 
@@ -718,14 +761,16 @@ printf("Minha idade atual é: %d", idade); // O valor de idade agora é 19 denov
 |   <<=    | x <<= 3 | x = x << 3 | Desloca os bits de x para a esquerda em 3 posições 		|
 +--------------------------------------------------------------------------------------------------+
 
+2 Coisas que você provavelmente não connhece! Operações Lógicas e Deslocamento de Bits, ou bit-shift do Inglês.
+
+O Bit shift é citado em __Bit Shift__ e você pode ir para lá caso queira aprender de uma vez oque é ou por curiosidade, mas não recomendo.
+
+Operações Lógicas pelo Contrário é essencial para você no início e durante toda a sua carreira como programador. Ela é a lógica base. como a máquina pensa e executa, e é bom você conseguir pensar assim também! A lógica é um pouco diferente do que estamos acostumados então não se preocupe caso não entenda tudo de início, é normal, Caso seja preciso volte ao início do guia para re-ler a parte de __Lógica De Programação__
+
 
 
 /////////                 Arquivos             //////////
 Existem diversas formas de se ler arquivos em C,
-
-
-
-
 
 
 
