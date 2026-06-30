@@ -230,6 +230,31 @@ Para fazer isso é simples, considere o dedo abaixado como 0 e o levantado como 
 Tente em Casa! faça o número 31, 12, 53, 87, 100, 220! Faça usando um papel e caneta ou com seus próprios dedos!
 
 
+///////             Operações Lógicas             ////////
+
+Existem diversas operações lógicas, elas como o nome propriamente diz são lógicas, assim que você pegar e entender como funciona você verá como é, lógico!
+
+Vamos começar, com a mais simples, OR, em português, OU, ela é muito simples, Se x for verdade, OU y for verdade, então eu contei pelo menos uma verdade.
+
+Por Exemplo :
+                         ↓↓
+Se eu andar de bicicleta OU correr estarei fazendo exercícios.
+                          
+Se eu fizer a primeira afirmação, ou a segunda, eu estarei fazendo exercícios, logo caso uma ou a outra seja verdade eu estarei falando a verdade. 
+
+Agora pense que 1 equivale a verdade, a o 0 a mentira, sendo assim podemos colocar que
+
+                  1      ↓↓   1                       1
+Se eu andar de bicicleta OU correr = estarei fazendo exercícios.
+
+Veja agora que, caso um ou o outro seja verdade a frase no final também é! Caso um seja e o outro não, ainda é verdade, porém se usássemos a condição AND, ou E em português ficaria :
+
+                   1     ↓   1                         1
+Se eu andar de bicicleta E correr estarei fazendo exercícios.
+ 
+Veja que, só é verdade que eu estarei fazendo exercícios se eu fizer um E o outro, caso eu faça apenas um, o último é falso.
+
+
 ##########             Introdução à C             #########
 
 Avisos e Dicas Antecipadas
