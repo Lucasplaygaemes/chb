@@ -55,7 +55,7 @@ tvOS
 TrueNAS 
 E do Playstation Vita, e do 3 ao 5.
 
-##########                     Distribuições Linux                   #########
+                                        ##########                     Distribuições Linux                   #########
 Distribuições Linux se refere a Sistemas Operacionais que contém o Kernel do Linux, originalmente Linux era o nome apenas do kernel, mas com a popularização, é rotineiro que se refiram ao Linux, como todo o sistema operacional, tanto do kernel a bibliotecas, ferramentas e ajustes que vão de Distro para distro.
 As distribuições mais novas apareceram em 1992, e incluíam o MCC Interim Linux (Do Centro de Computação de Manchester, Reino Unido), o TAMU (Texas A&M Universidade), e o SLS (SoftLanding Linux System). Os mais antigos sobreviventes até hoje são do slackware, que apareceu em 1993, e o Debian apareceu aproximadamente na mesma época, logo o SUSE e a Red Hat seguiram e entraram no jogo.
 Existem diversas distribuições Linux, irei citar e dissertar sobre algumas delas e oque eu imagino que seja mais sua especialidade e público alvo.
@@ -64,7 +64,16 @@ Debian:
 Debian tem sido a minha escolha principal nos últimos tempos, se você busca estabilidade segurança e confiança ? Debian seja a sua escolha, a versão estável do dele e sua reputação de seguro e imutável, ou seja, que não muda, o Debian tem um longo e exaustante processo de teste de programas, onde um programa pode ficar meses, ou até anos sendo vetado em ramos como "Testando" ou "Instável" fazendo com que ele sai apenas quando ele seja garantidamente seguro e estável.
 Sua estabilidade é universal! na verdade, entre diversas arquiteturas, dentre elas a mais comum, a x86, a AMD64, ARM, PowerPC, MIPS, e RISC-V.
 Ele é mantido totalmente pela comunidade e não por uma empresa como outras distros. Com o seu sistema de pacotes maravilhoso, o APT/dpkg. O Debian é a base para diversos e diversos sistemas operacionais que eles mesmo são a base para outros, o Debian não busca ser o primeiro a adicionar coias completamente novas ou que mudem ele por completo, o Debian quase sempre não é o primeiro a implementar novas funções, e quase sempre é o último a quebrar.
+Existem muitas mais informações sobre o Debian e variantes deles, para mais informações vá para _Sistemas Operacionais 2_
 
+Ubuntu:
+Ubuntu é uma distribuição que nasceu em 2004, com objetivo de pegar a base segura e sólida do debian e facilitar para novos usuários, e para qualquer um. Com a confiabilidade do Debian e um foco grande em Interfaces Gráficas e aplicativos e configurações mais simples permitem que o Ubuntu fosse se não o principal, uma das Distros Linux mais recomendadas para inciantes.
+Com seu ciclo de lançamento previsível, e seguro, além das versões LTS (Long Term Support ou seja, Logos períodos de Suporte) que são focados em estabilidade e suporte e estabilidade por até 10 anos.
+Compatibilidade é um ponto forte, ao contrário do Debian que sempre focou em drivers livres, o ubuntu facilita muito a instalação de drivers de código fechado como de placas de video da NVIDIA ou AMD, tornado ótimo para jogos.
+A comunidade do ubuntu é gigantesca, e amigável, te permitindo buscar ajuda na internet e provavelmente ser bem recebido.
+Assim como o Debian, o ubuntu tem distros baseadas nele! Como o Kubuntu, Xubuntu, Lubuntu, Ubuntu MATE etc... Para mais informações vá ao fim desta seção.
+
+Para mais informações sobre cada sistema operacional de forma mais profunda e completa vá para _Sistemas Operacionais 2_
 
 ##                          Padronização                     ##
 No fim dos anos 80, uma variedade de implementações do UNIX estavam disponíveis, ótimo, mas com um problema, algumas eram baseadas no BSD, outras no System V (Outro sistema), e alguns para os 2, sendo assim, cada fabricante/ programador, adicionava oque queria na sua implementação, fazendo ser muito difícil portar programas, oque pressionou a padronização do C.
