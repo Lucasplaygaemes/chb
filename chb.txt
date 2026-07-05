@@ -12,12 +12,11 @@ Dúvidas é possível entrar em contanto através de lucasplaygaemes@gmail.com
 
 ########             ATENCÃO             ########
 
-Haverá contéudo em C escrito de forma NÃO liner, devido a facilidade, caso eu esteja estudando ou vendo algo em C, adiantarei a sua escritura e depois edito ou corrijo caso necessário.
-
+Haverá contéudo em C escrito de forma NÃO liner, devido a facilidade conveniência, caso eu esteja estudando ou vendo algo em C, adiantarei a sua escritura e depois edito ou corrijo caso necessário.
 
                                                         #########             SISTEMAS                 #########
 
-O "bisavô" do Linux e de quase todo OS, é o UNIX, foi desenvolvido em 1969, quando o Linus Torvald nasceu, pelo Ken Thompson nos laboratórios Bell, dá AT&T.
+O "bisavô" do Linux e de quase todo OS, é o UNIX, foi desenvolvido em 1969, quando o Linus Torvald nasceu. Pelo Ken Thompson nos laboratórios Bell, dá AT&T.
 Em 1970 o UNIX foi reescrito em assembly, pouco tempo depois, Dennis Ritchie, um dos colegas do Thompson, fez o design e a implementação da linguagem C.
 
 The GNU project
@@ -35,16 +34,12 @@ Dentre outros.
 Na época, o equipe da GNU havia feito quase tudo para distribuir um OS completo, exceto o kernel, agora que o Linus faz a sua mágica.
 
 
-
 #####                     Linux                 #####
 Em 1991, o estudante Finlandês da universidade de Helsinki, foi inspirado a desenvolver seu próprio sistema operacional para o seu Intel 80386 PC. Ao longos do seus estudos, ele iniciou um projeto para criar um completo, eficiente e completo kernel UNIX para rodar no 386, que aliás, havia suporte até 2012, 21 anos mais ou menos de suporte.
 O torvald desenvolveu um kernel básico, capaz de rodar e compilar vários programas GNU, e na época pediu ajuda para o desenvolver.
 Inicialmente ele estava sobre uma outra licença mais restritiva, mas posteriormente ele migrou para a a GNU GPL.
 E ele consegui ajuda, e um tempo depois, em março de 1994, a versão 1.0 do Linux foi lançada!
 Daí para frente é história.
-
-
-
 
 
 #####                     BSD's                  #####
@@ -60,26 +55,23 @@ tvOS
 TrueNAS 
 E do Playstation Vita, e do 3 ao 5.
 
-
-
 ##########                     Distribuições Linux                   #########
 Distribuições Linux se refere a Sistemas Operacionais que contém o Kernel do Linux, originalmente Linux era o nome apenas do kernel, mas com a popularização, é rotineiro que se refiram ao Linux, como todo o sistema operacional, tanto do kernel a bibliotecas, ferramentas e ajustes que vão de Distro para distro.
 As distribuições mais novas apareceram em 1992, e incluíam o MCC Interim Linux (Do Centro de Computação de Manchester, Reino Unido), o TAMU (Texas A&M Universidade), e o SLS (SoftLanding Linux System). Os mais antigos sobreviventes até hoje são do slackware, que apareceu em 1993, e o Debian apareceu aproximadamente na mesma época, logo o SUSE e a Red Hat seguiram e entraram no jogo.
 
 
 ##                          Padronização                     ##
-No fim dos anos 80, uma variedade de implementações do UNIX estavam disponíveis, ótimo, mas com um problema, algumas eram baseadas no BSD, outras no System V, e alguns para os 2, sendo assim, cada fabricante/ programador, adicionava oque queria na sua implementação, fazendo ser muito difícil portar programas, oque pressionou a padronização do C.
+No fim dos anos 80, uma variedade de implementações do UNIX estavam disponíveis, ótimo, mas com um problema, algumas eram baseadas no BSD, outras no System V (Outro sistema), e alguns para os 2, sendo assim, cada fabricante/ programador, adicionava oque queria na sua implementação, fazendo ser muito difícil portar programas, oque pressionou a padronização do C.
 
 ######                  The C Programming Language             #######
 
 No início dos anos 80, C já teria 10 anos de existência, e foi implementado em uma variedade de dispositivos UNIX e outros sistemas operacionais, com pequenas diferenças entre eles, parte disso porque a linguagem não era padronizada como deveria funcionar.
 Esse fatores incentivaram na criação de uma padronização do C, que culminaram em 1989 com a aprovação do ANSI, ou, American National Standars Institute, ou Agência Nacional Americana de Normas/Regras/Padrões.
 Que logo foi adotado pela ISO, além de definir a sintaxe e semântica do C e diversas coisas, essa versão é conhecida como C89, ou menos comumente ISOC90, é e completamente descrito no Livro do Ritchie's the C Programming language.
-Uma revisão foi adotado pela ISO do padrão em C em 1990, esse padrão é normalmente referido como C99, que contam com diversas modificações na linguagem, essas modificações incluíam a adição do tipo "long long", e de dados Booleanos, comentários com //.
+Uma revisão foi adotado pela ISO do padrão em C em 1990, esse padrão é normalmente referido como C99, que contam com diversas modificações na linguagem, essas modificações incluíam a adição do tipo "long long", e de dados Booleanos, comentários com //. Não se preocupe com isso por agora
 Pointer's ou ponteiros foram restringidos, e arrays de tamanho variável.
 Uma coisa ótima sobre o C, é que suas características não são fixas devido ao sistema operacional, ou não apenas fixas no UNIX, qualquer programa em C usando apenas a bibliotecas padrões do C devem ser portáveis através de qualquer distribuição que o suporte.
 Isso é uma pura verdade, entretanto, é de suma importância que se note no "Usando apenas as bibliotecas padrões do C", pois, ao avançar na linguagem, e que bibliotecas mais complexas ou funções sejam necessárias, o Windows tem ramificações e diferenciações do C genérico e o do Windows, tal qual o Windows tem código que só podem ser compilados com o compilador próprio do windows, caso contrário não compilaria.
-
 
 ## Padrões POSIX ##
 
@@ -95,13 +87,11 @@ OPCIONAL E PARA SER ADICIONADO NO FUTURO
 Como objetivo geral do Linux, como exemplo o Kernel, Glibc, e as ferramentas, buscam se adequadas as diversas distribuições do Linux, entretanto, até o momento, distribuições linux são categorizadas como "UNIX"
 
 
-
-
 ##################             Conceitos Fundamentais         ##################
 
 "Conceitos Fundamentais" abrange uma variedade de conceitos relacionados ao Linux, programação de sistemas, C e etc...
 
-Este cápitulo tem o objetivo de servir de base para programadores ou usuários que apenas utilizaram outros sistemas operacionais, ou tem se não nenhum pouca familiridade com o Linux e com o UNIX.
+Este cápitulo tem o objetivo de servir de base para programadores ou usuários que apenas utilizaram outros sistemas operacionais, ou tem se não nenhum pouca familiaridade com o Linux e com o UNIX.
 
 ####### O Núcleo do Sistema: O Kernel  ######
 
@@ -177,9 +167,6 @@ Existem textos e livros que cobrem conceitos sobre sistemas operacionais e seus 
 Bovet & Cesati 2005.
 
 
-
-
-
 //////////             Lógica De Programação             //////////
 
 A lógica de programação simplesmente é a lógica na qual computadores pensam e executam, saber como eles fazem isso é de suma importância no aprendizado de qualquer linguagem de programação, e C não é exceção!
@@ -189,7 +176,7 @@ Primeiro vamos começar com algo mais simples, ou seja, Binário!
 /////                 Binário                          /////
 
 A base binária é simples, mas para entendermos ela precisamos entender a que já usamos, a decimal, ou seja, na base 10.
-Por exemplo, Para escrever o número 721, podemos escrever em 7 Centenas, 2 Dezenas e 1 unidade, ou  70 Dezenas, 20 Dezenas e 1 unidade.
+Por exemplo, Para escrever o número 721, podemos escrever em 7 Centenas, 2 Dezenas e 1 unidade, ou  70 Dezenas, 2 Dezenas e 1 unidade.
 Como todos nós sabemos existem 10 numerais na base 10, de 0 a 9, atenção que começamos a contar do 0, e não existe o numeral 10, é apenas o 1 mais o 0.
 
 Já o binário, funciona apenas com 0 e 1, sendo assim é extremamente rápido, pois lida apenas com "contas simples".
@@ -254,7 +241,53 @@ Se eu andar de bicicleta E correr estarei fazendo exercícios.
  
 Veja que, só é verdade que eu estarei fazendo exercícios se eu fizer um E o outro, caso eu faça apenas um, o último é falso.
 
+Então temos os um pouquinho mais complicado, Temos o XOR, que vem de "Exclusive Or", "Ou Exclusivo" em Português, ele é verdadeiro apenas caso os valores sejam diferentes! se forem iguais ele retorna falso. Por exemplo :
 
+-------------------------------------------------------
+| Entrada A     | Entrada B     | Resultado (XOR)     |
+-------------------------------------------------------
+| 0             | 0             | 0                   |
+| 0             | 1             | 1                   |
+| 1             | 0             | 1                   |
+| 1             | 1             | 0                   |
+-------------------------------------------------------
+
+Veja que, só é 1 quando os valores são diferentes.
+
+Temos também o operador de negação! Ou seja, eles negam, invertem, flipam o valor do bit, simples não é?
+
+-------------------------------------------------------
+| Entrada A     | Operação      | Resultado           |
+-------------------------------------------------------
+| 0             | !A (Lógico)   | 1                   |
+| 1             | !A (Lógico)   | 0                   |
+-------------------------------------------------------
+
+Todos os outros operadores lógicos são junções desse operadores básicos.
+
+
+/////             Bits, e Depois?             /////
+
+Agora você sabe que bits são unidades que podem ter o valor de 0 e 1, porém, se quando agrupamos 10 unidades da base decimal, qual nome de quando agrupamos 10 na base binária?
+Na base binária não agrupamos por 10, mas por 8! assim, a cada 8 Bits, temos 1 Bytes.
+Sendo assim a cada 8 Bytes temos? Nada! 
+
+Como você deve ter percebido o bit é uma unidade de muito muito pequena, usamos o byte como base para medirmos o tamanho dos aplicativos fotos arquivos e etc...
+
+Por exemplo, 1000, mas 1000 não é um divisor de 8, então usamos 1024!
+É simples!
+
+1024 Bytes é 1 Kilobyte. "Kilo" vem de 1000, ou seja, mais ou menos 1000 bytes.
+1024 Mega Bytes, É uma Giga Bytes.
+1024 Giga Bytes é um Tera Byte.
+1024 Tera Bytes é um Peta Byte.
+1024 Peta Bytes é um Exa Byte.
+1024 Exa Bytes é um Yotta Byte. 
+
+Supondo que uma foto em geral pesa 4. MB (Mega Bytes), em um HD de 1 TB tem 1073741824 Bytes, isso quer dizer que cabem 40960 fotos!
+
+O tráfego estimado de Internet em 2025 é 8,8 Zetta Bytes!! Ou seja, 8,8 Trilhões de Gigabytes!¹[https://www.itu.int/itu-d/reports/statistics/2025/10/15/ff25-internet-traffic/]
+    
 ##########             Introdução à C             #########
 
 Avisos e Dicas Antecipadas
@@ -654,7 +687,7 @@ Isso pode ser perigoso, já que você pode perder o controle da conversão em ce
 Especialmente se for ao contrário, o próximo exemplo automaticamente converte o valor de 9.99 para 9 :
 
 ```
-// Conversão automática: de float para int
+// Conversão automática?: de float para int
 
 int meu_inteiro = 9.99;
 
@@ -771,22 +804,7 @@ printf("Minha idade atual é: %d", idade); // O valor de idade agora é 19 denov
 
 ///// Operadores 
 
-+--------------------------------------------------------------------------------------------------+
-| Operador | Exemplo | Igual A    | Descrição							|
-|     =    | x = 5   | x = 5      | Atribui o valor 5 a x      					|
-|    +=    | x += 3  | x = x + 3  | Soma 3 ao valor de x					        |
-|    -=    | x -= 3  | x = x - 3  | Subtrai 3 do valor de x 					|
-|    *=    | x *= 3  | x = x * 3  | Multiplica x por 3 						|
-|    /=    | x /= 3  | x = x / 3  | Divide x por 3 						|
-|    %=    | x %= 3  | x = x % 3  | Atribui o resto da divisão de x por 3 			|
-|    &=    | x &= 3  | x = x & 3  | Aplica a operação lógica E (AND) bit a bit 			|
-|   \|=    | x \|= 3 | x = x \| 3 | Aplica a operação lógica OU (OR) bit a bit 			|
-|    ^=    | x ^= 3  | x = x ^ 3  | Aplica a operação lógica OU Exclusivo (XOR) bit a bit 	|
-|   >>=    | x >>= 3 | x = x >> 3 | Desloca os bits de x para a direita em 3 posições 		|
-|   <<=    | x <<= 3 | x = x << 3 | Desloca os bits de x para a esquerda em 3 posições 		|
-+--------------------------------------------------------------------------------------------------+
-
-2 Coisas que você provavelmente não connhece! Operações Lógicas e Deslocamento de Bits, ou bit-shift do Inglês.
+1 Coisa que você provavelmente não connhece! Deslocamento de Bits, ou bit-shift do Inglês.
 
 O Bit shift é citado em __Bit Shift__ e você pode ir para lá caso queira aprender de uma vez oque é ou por curiosidade, mas não recomendo.
 
