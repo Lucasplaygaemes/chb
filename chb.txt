@@ -58,6 +58,12 @@ E do Playstation Vita, e do 3 ao 5.
 ##########                     Distribuições Linux                   #########
 Distribuições Linux se refere a Sistemas Operacionais que contém o Kernel do Linux, originalmente Linux era o nome apenas do kernel, mas com a popularização, é rotineiro que se refiram ao Linux, como todo o sistema operacional, tanto do kernel a bibliotecas, ferramentas e ajustes que vão de Distro para distro.
 As distribuições mais novas apareceram em 1992, e incluíam o MCC Interim Linux (Do Centro de Computação de Manchester, Reino Unido), o TAMU (Texas A&M Universidade), e o SLS (SoftLanding Linux System). Os mais antigos sobreviventes até hoje são do slackware, que apareceu em 1993, e o Debian apareceu aproximadamente na mesma época, logo o SUSE e a Red Hat seguiram e entraram no jogo.
+Existem diversas distribuições Linux, irei citar e dissertar sobre algumas delas e oque eu imagino que seja mais sua especialidade e público alvo.
+
+Debian:
+Debian tem sido a minha escolha principal nos últimos tempos, se você busca estabilidade segurança e confiança ? Debian seja a sua escolha, a versão estável do dele e sua reputação de seguro e imutável, ou seja, que não muda, o Debian tem um longo e exaustante processo de teste de programas, onde um programa pode ficar meses, ou até anos sendo vetado em ramos como "Testando" ou "Instável" fazendo com que ele sai apenas quando ele seja garantidamente seguro e estável.
+Sua estabilidade é universal! na verdade, entre diversas arquiteturas, dentre elas a mais comum, a x86, a AMD64, ARM, PowerPC, MIPS, e RISC-V.
+Ele é mantido totalmente pela comunidade e não por uma empresa como outras distros. Com o seu sistema de pacotes maravilhoso, o APT/dpkg. O Debian é a base para diversos e diversos sistemas operacionais que eles mesmo são a base para outros, o Debian não busca ser o primeiro a adicionar coias completamente novas ou que mudem ele por completo, o Debian quase sempre não é o primeiro a implementar novas funções, e quase sempre é o último a quebrar.
 
 
 ##                          Padronização                     ##
@@ -296,14 +302,11 @@ Códigos estarão dentro de ``` código ```
 
 Man se refere ao utilitário de ajuda padrão do linux, ele é de altissima qualidade, porém de dificil interpretação caso você seja iniciante.
 
-
-
 Estarei adiantando a parte de C, em especifico, a parte em C será uma mistura até o momento composta de 2 livros e conhecimento prévio + mais caso de bugs, "hacks" falhas conhecidas e etc.
 
 Tenho como principal objetivo durante a escrita deste guia facilitar o máximo possível a programação em C, devido a isso, mesmo partes simples dó código serão pesadamente discutidas com o objetivo de facilitar e permitir um melhor entendimento da linguagem.
 Dúvidas podem ser adereçadas ao autor.
 O email de contato estará no início e fim do livro/guia.
-
 
 
 ////////             Introdução/ Conceitos básicos.            /////////
@@ -314,8 +317,6 @@ ATENÇÃO!
 Toda uma secção para IDE's e Editores de Texto será feita, porém ela não tem a mesma prioridade que a parte do C por si próprio, por isso será atrasada por um período de tempo indeterminado. 
 Caso haja uma requisição deste tema, ele será escrito paralelamente ao C.
 O IDE onde este guia está sendo escrito é o a2 (https://github.com/lucasplaygaemes/a2.git)
-
-
 
 
 /////////             Versões             //////////
@@ -343,8 +344,6 @@ int main(void) {             // 1
 ```
 
 Caso você copie direto do arquivo digital, você pode copiar e colar este programa e ele irá compilar sem erros.
-
-
 
 
 ////////             Compilando e Rodando seu Programa             /////////
