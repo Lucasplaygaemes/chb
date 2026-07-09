@@ -589,7 +589,6 @@ Esses três são bem diferentes mas todos são considerados problemas de portabi
 Todas as opções são ruins, especialmente a primeira, então sempre é bom evitar esse tipo de situação.
 
 
-
 /////////             Ponteiros             /////////
 
 Oque são ponteiros?
@@ -818,6 +817,24 @@ O Bit shift é citado em __Bit Shift__ e você pode ir para lá caso queira apre
 
 Operações Lógicas pelo Contrário é essencial para você no início e durante toda a sua carreira como programador. Ela é a lógica base. como a máquina pensa e executa, e é bom você conseguir pensar assim também! A lógica é um pouco diferente do que estamos acostumados então não se preocupe caso não entenda tudo de início, é normal, Caso seja preciso volte ao início do guia para re-ler a parte de __Lógica De Programação__
 
+Note que, diversos operadores de atribuição são apenas operações matemáticas de forma curta.""
+Ex.:
+
+x +=; 10 é a mesma coisa que x = x + 10;
+Isto serve para diversos casos, como multiplicação, divisão, resto. etc!
+
+
+///// Operadores de Comparação
+Operadores de comparação como o próprio nome diz, são usados para comparar dois valores ou duas variáveis, é de extrema importância pois podemos usar essas comparações para tomar decisões em nossos códigos.
+O valor de retorno entre comparações é 1 para verdade ou 0 para falso, seguindo a lógica boleana.
+Por exemplo, usando o operador maior que, ">"
+
+```
+int x = 5;
+int y = 3;
+
+printf("X é maior que y? 1 para sim 0 para nao: %d\n", x > y); // O output é 1!
+```
 
 
 /////////                 Arquivos             //////////
