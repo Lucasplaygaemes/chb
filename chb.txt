@@ -837,9 +837,41 @@ printf("X é maior que y? 1 para sim 0 para nao: %d\n", x > y); // O output é 1
 ```
 
 
+//// Operadores Lógico
+
+Operadores lógicos assim como de comparação você pode testar por verdade ou falso, sendo ainda 1 para verdade e 0 para falso.
+
+Os Operadores lógicos são :
+
+&& é o operador E, ele retorna 1, ou verdade, caso ambas condições sejam verdadeiras.
+Ex.: x > 5 && x < 10
+Ou seja isso é 1 se X for maior que 5 e menor que 10.
+
+|| é o operador OU, ele retorna um caso uma das afirmações seja verdadeira.
+Ex.: x > 10 || y > 10
+Se x ou y forem menor que 10, ele retorna verdadeiro.
+
+! é o operador da negação, ele nega, inverte os valores. Se era 1 vira 0 e se era 0 vira 1!
+Assuma que x tem o valor de 9.
+Ex.: (x > 10)
+Retornaria verdade, mas se colocarmos os ! ele inverte os valores, então vira 0!
+
+///// Precedencia 
+Assim como na matemática, C tem uma ordem na qual ele executa contas com mais de 1 operando. 
+Aqui a ordem:
+() Parênteses
+*, /, % Multiplicação divisão e módulo
++, - Adição e subtração
+>, <, >=, <= Maior que, menor que, Maior ou igual que, Menor ou igual oque
+&& Lógico E
+|| Lógico OU
+= Atribuição
+
+Adição e subtração são feitas da esquerda para direita a não ser que você use parênteses.
+
+
 /////////                 Arquivos             //////////
 Existem diversas formas de se ler arquivos em C,
-
 
 
 ////////                     Manipulação de Horários e Datas             /////////
@@ -851,7 +883,7 @@ man(2) time
 1 Iteração sobre tempo em C.
 
 
-Em C, para podermos ver o horário e a data, usamos o header _UCR_<time.h>_UCR_.
+""Em C, para podermos ver o horário e a data, usamos o header _UCR_<time.h>_UCR_.
 A biblitoca te permite pegar a hora atual e a formata-lá fazer cáculos que envolvem tempo. 
 
 A função time() funciona retornando o numéro de segundos desde o "Epoch", 1970-01-01 00:00:00 +0000 UTC.
