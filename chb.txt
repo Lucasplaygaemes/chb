@@ -869,7 +869,44 @@ Aqui a ordem:
 
 Adição e subtração são feitas da esquerda para direita a não ser que você use parênteses.
 
+///// Boolenos
+Muito comumente você irá precisar de variáveis que tenham apenas 2 valores como: "Sim Ou Não" ou "Ligado ou Desligado" ou "Verdade ou Falso".
+Nessas horas, C tem um tipo de variável que é feito para isso, chamada de "bool" e são conhecidas como booleanas.
+Booleanas representam dois valores, verdade ou falso
+Bool não é um tipo de variável padrão em C, ele foi introduzido no C99, e para usar-la você precisa incluir a biblioteca "stdbool".
+```
+#include <stdbool.h>     // O nome representa Standard Bool, ou Padrão Booleano
+```
 
+Ela é declarada com a palavra-chave bool e pode receber dois valores, verdadeiro ou falso.
+```
+bool c_e_legal = true;
+bool c_e_dificil = false;
+```
+
+E antes que você tente imprimir na tela o valor de uma variável boolena sabia os valores que ela representa :
+1 ou qualquer outro valor diferente de 0 representa true.
+0 representa falso.
+
+Você pode usar %d para mostrar o valor da variável, e sendo assim se ela é verdadeira ou falsa.
+
+Você pode fazer as comparações que já viu com booleanas! Entre números, números e variáveis, e variáveis com números!
+Ou até mesmo fazer funções com o objetivo de fazer essas verificações!
+Ex.:
+```
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+
+int x = 10;
+int y = 9;
+
+bool e_maior = x > y;
+
+printf("%d", e_maior); // Imprimi 1, ou seja, é verdade!
+```
+
+ 
 /////////                 Arquivos             //////////
 Existem diversas formas de se ler arquivos em C,
 
@@ -878,12 +915,11 @@ Existem diversas formas de se ler arquivos em C,
 
 Fontes: https://www.w3schools.com/c/c_date_time.php
 man(2) time
-Ĝ
 
 1 Iteração sobre tempo em C.
 
 
-""Em C, para podermos ver o horário e a data, usamos o header _UCR_<time.h>_UCR_.
+Em C, para podermos ver o horário e a data, usamos o header _UCR_<time.h>_UCR_.
 A biblitoca te permite pegar a hora atual e a formata-lá fazer cáculos que envolvem tempo. 
 
 A função time() funciona retornando o numéro de segundos desde o "Epoch", 1970-01-01 00:00:00 +0000 UTC.
