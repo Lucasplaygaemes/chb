@@ -906,6 +906,28 @@ bool e_maior = x > y;
 printf("%d", e_maior); // Imprimi 1, ou seja, é verdade!
 ```
 
+/////////                    If and Else                     /////////
+
+Oque é "If"? Oque é "Else", são Se e Se não respectivamente!
+Essas são palavras chaves em qualquer linguagem de programação! Elas representam quando você tem a possibilidade de ter mais uma condição e quer que coisas em aconteçam especificamente conforme cada condição! 
+Veja o exemplo:
+
+```
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int x = 10; // Define uma variavel com o nome x e dá o valor de 10 para ela
+    
+    if (x > 10) { // Verifica se x é MAIOR que 10, se for, executa oque está dentro das chaves
+        printf("E maior que 10!.\n");
+    } else { // Caso ela não seja maior que 10, executa oque está dentro das chaves
+        printf("E menor que 10!.\n");
+    }
+    return 0;
+}
+```
+Este código demonstra uma situação simples de If ou else, se você mudar x para um número menor que 10 ele mostra algo, se for maior ele mostra outra coisa!
  
 /////////                 Arquivos             //////////
 Existem diversas formas de se ler arquivos em C,
@@ -934,7 +956,6 @@ O horário não pode ser representado como um valor time_t (Cite time_t). Isso a
 Contéudo mais profundo será discutido na 2 seção designada ao time.
 
 Aplicações com objetivo de funcionar depois de 2038 devem usar ABIs (Cite ABIs) com time_t maior que 32 bits, veja time_t (Cita 2 seção de time)(3type)
-
 
 // Conseguindo horário atual //
 
