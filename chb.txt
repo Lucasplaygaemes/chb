@@ -910,6 +910,18 @@ printf("%d", e_maior); // Imprimi 1, ou seja, é verdade!
 
 Oque é "If"? Oque é "Else", são Se e Se não respectivamente!
 Essas são palavras chaves em qualquer linguagem de programação! Elas representam quando você tem a possibilidade de ter mais uma condição e quer que coisas em aconteçam especificamente conforme cada condição! 
+
+Em C temos:
+If, executa algo caso uma certa condição seja verdade.
+Else, para executar algo caso a condição não seja verdade.
+Else if, para verificar uma nova condição caso o primeiro if tenha sido falso.
+
+
+
+Use o If para especificar um bloco de código que deve ser executado caso uma condição seja verdadeira.
+
+
+
 Veja o exemplo:
 
 ```
